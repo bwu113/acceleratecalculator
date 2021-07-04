@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accelerate Price Calculator</title>
+</head>
+<body>
+    <div>
+        <form>
+            <label for="Bookings">Booking Type:</label>
+            <select name="Bookings" id="Bookings">
+                <option value="test" selected>Select Booking</option>
+                <option value="TradeChat">Trade Chat</option>
+                <option value="Discord">Discord</option>
+            </select><br>
+            <label for="RunType">Run Type</label>
+            <select name="RunType" id="RunType">
+                <option value="" selected>Select Run Type</option>
+                <option value="FullClear">Full Clear</option>
+                <option value="Last2">Last 2</option>
+                <option value="Sire">Sire Only</option>
+            </select><br>
+            <label for="FunnelType">Funnel Type:</label>
+            <select name="FunnelType" id="FunnelType">
+                <option value="" selected>Select Funnel Type</option>
+                <option value="Armor">Armor</option>
+                <option value="Class">Class</option>
+            </select><br>
+            <label for="FunnelQty">Funnel Amount:</label>
+            <input type="number" id="FunnelQty" name="FunnelQty" max = 10 min = 0 value="0" autofocus>
+            <br>
+            <label for="ListPrice">List Price</label><br>
+            <input type="number" id="ListPrice" name="ListPrice" value="" readonly>
+            <br>
+            <label for="MinPrice">Min Price</label><br>
+            <input type="number" id="MinPrice" name="MinPrice" value="" readonly>
+            <br>
+            <label for="Commission">Commission</label><br>
+            <input type="number" id="Commision" name="Commission" value="" readonly>
+            <br>
+            <label for="BasePrice">Base Price</label><br>
+            <input type="number" id="BasePrice" name="BasePrice" value="" readonly>
+            <br>
+            <label for="FunnelPrice">Funnel Price</label><br>
+            <input type="text" id="FunnelPrice" name="FunnelPrice" value="">
+            <br>
+            <label for="TotalFunnelPrice">Total Funnel Cost</label><br>
+            <input type="number" id="TotalFunnelPrice" name="TotalFunnelPrice" value="" readonly>
+            <br>
+            <button id="submit" name="submit" onclick="Validate()">Calculate</button>
+        </form>
+    </div>
+</body>
+</html>
