@@ -67,8 +67,6 @@ function runTrade(difficulty)
 function runNormal()
 {
     var base = document.getElementById("BasePrice").value;
-    
-    if(difficulty == "normal")
     var Commission = base - parseInt(minPrice["normal"]["full"].replace(/,/g, ""));
         Commission = new Intl.NumberFormat('en-US').format(Commission);
 
