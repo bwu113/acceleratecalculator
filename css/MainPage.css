@@ -1,0 +1,72 @@
+.header-img {
+    width:auto;
+    display: block;
+    height:255px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.header-background {
+    height: 275px;
+    width: 100%;
+    background-color:  #262625;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+body {
+    background-color: #5f5f5f;
+}
+ul {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    background-image: linear-gradient(180deg, rgb(77, 77, 77), rgba(255, 255, 255, 0.151)75%);
+    border-style: solid;
+    border-bottom-width: 1.5px;
+    border-top-width: 1.5px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    text-align: center;
+    position: absolute;
+    top: 274px;
+    left: 0;
+    min-width: 100%;
+}
+li {
+    display: inline;
+}
+li a{
+    color: rgb(255, 255, 255);
+    padding: 14px 16px;
+    display: inline-block;
+    text-decoration: none;
+}
+li a:hover{
+    background-image: linear-gradient(180deg, gray, rgba(255, 255, 255, 0.404) 75%);
+}
+#raidform{
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+}
+.raid-cal {
+    position:absolute;
+    top: 350px;
+}
+#Bookings {
+    border-radius: 10px;
+    background-color: turquoise;
+}
+#Difficulty {
+    border-radius: 10px;
+    background-color: turquoise;
+}
+#RunType {
+    border-radius: 10px;
+    background-color: turquoise;
+}

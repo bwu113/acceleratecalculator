@@ -6,10 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accelerate Price Calculator</title>
+    <link rel="stylesheet" href="./css/MainPage.css">
 </head>
 
 <body>
-    <form onchange="showRuns()">
+    <div class="header-background"></div>
+    <div class="header">
+        <img class="header-img" src="./assets/CoD_Logo.png">
+    </div>
+
+    <ul>
+        <li><a class="active" href="./index.html">Home</a></li>
+        <li><a>Raid</a></li>
+        <li><a>Mythic</a></li>
+        <li><a>Torghast</a></li>
+    </ul>
+
+    <div id="raidform">
+    <form class="raid-cal" onchange="showRuns()">
         <label>Booking Type:</label>
         <select id="Bookings">
             <option value="tradechat" selected>Trade Chat</option>
@@ -62,6 +76,7 @@
         -->
         <button type="button" onclick="Calculate()">Calculate</button>
     </form>
+    </div>
     <script src="./javascript/main.js"></script>
 </body>
 
