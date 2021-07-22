@@ -13,7 +13,7 @@ const tradeProfit = {normal:{full:"120,000",
                      heroic:{full:"717,000", 
                              last:"417,000", 
                              aotc:"237,000"}};
-const minPrice = {normal:{full:"1,173,000",
+const minPrice = {normal:{full:"680,000",
                           last:"212,500"}, 
                   heroic:{full:"4,063,000", 
                           last:"2,363,000", 
@@ -27,7 +27,6 @@ function showRuns()
     {
         case "normal":
             document.getElementById("r2").style.display = "none";
-            document.getElementById("RunType").options[0].selected = "selected";
             break;
         case "heroic":
             document.getElementById("r2").style.display = "";
@@ -59,7 +58,7 @@ function runTrade(difficulty)
 
     if(difficulty == "normal")
     {
-        runTradeNormal(base);
+        runTradeNormal(base, runType);
     }
     else
     {
@@ -67,15 +66,19 @@ function runTrade(difficulty)
     }
 }
 
-function runTradeNormal(base)
+function runTradeNormal(base, runOption)
 {
-    var Commission = base - parseInt(minPrice["normal"]["full"].replace(/,/g, ""));
-        Commission = new Intl.NumberFormat('en-US').format(Commission);
-
-        document.getElementById("ListPrice").value = tradePrices["normal"]["full"];
-        document.getElementById("MinPrice").value = minPrice["normal"]["full"];
-        document.getElementById("MaxProfit").value = tradeProfit["normal"]["full"];
-        document.getElementById("Commission").value = Commission;
+    switch(runOption)
+    {
+        case "fullclear":
+            tradeNFullClear(base);
+            break;
+        case "last3":
+            tradeNLast(base);
+            break;
+        default:
+            break;
+    }
 }
 
 function runTradeHeroic(base, runOption)
@@ -94,6 +97,28 @@ function runTradeHeroic(base, runOption)
         default:
             break;
     }
+}
+
+function tradeNFullClear(base)
+{
+    var Commission = base - parseInt(minPrice["normal"]["full"].replace(/,/g, ""));
+        Commission = new Intl.NumberFormat('en-US').format(Commission);
+
+        document.getElementById("ListPrice").value = tradePrices["normal"]["full"];
+        document.getElementById("MinPrice").value = minPrice["normal"]["full"];
+        document.getElementById("MaxProfit").value = tradeProfit["normal"]["full"];
+        document.getElementById("Commission").value = Commission;
+}
+
+function tradeNLast(base)
+{
+    var Commission = base - parseInt(minPrice["normal"]["last"].replace(/,/g, ""));
+        Commission = new Intl.NumberFormat('en-US').format(Commission);
+
+        document.getElementById("ListPrice").value = tradePrices["normal"]["last"];
+        document.getElementById("MinPrice").value = minPrice["normal"]["last"];
+        document.getElementById("MaxProfit").value = tradeProfit["normal"]["last"];
+        document.getElementById("Commission").value = Commission;
 }
 
 function tradeHFullClear(base)
@@ -136,7 +161,7 @@ function runDiscord(difficulty)
 
     if(difficulty == "normal")
     {
-        runDiscordNormal(base);
+        runDiscordNormal(base, runType);
     }
     else
     {
@@ -144,7 +169,22 @@ function runDiscord(difficulty)
     }
 }
 
-function runDiscordNormal(base)
+function runDiscordNormal(base, runOption)
+{
+    switch(runOption)
+    {
+        case "fullclear":
+            discordNFullClear(base);
+            break;
+        case "last3":
+            discordNLast(base);
+            break;
+        default:
+            break;
+    }
+}
+
+function discordNFullClear(base)
 {
     var Commission = base - parseInt(minPrice["normal"]["full"].replace(/,/g, ""));
         Commission = new Intl.NumberFormat('en-US').format(Commission);
@@ -152,6 +192,17 @@ function runDiscordNormal(base)
         document.getElementById("ListPrice").value = discordPrices["normal"]["full"];
         document.getElementById("MinPrice").value = minPrice["normal"]["full"];
         document.getElementById("MaxProfit").value = "50,000";
+        document.getElementById("Commission").value = Commission;
+}
+
+function discordNLast(base)
+{
+    var Commission = base - parseInt(minPrice["normal"]["last"].replace(/,/g, ""));
+        Commission = new Intl.NumberFormat('en-US').format(Commission);
+
+        document.getElementById("ListPrice").value = discordPrices["normal"]["last"];
+        document.getElementById("MinPrice").value = minPrice["normal"]["last"];
+        document.getElementById("MaxProfit").value = "37,500";
         document.getElementById("Commission").value = Commission;
 }
 
