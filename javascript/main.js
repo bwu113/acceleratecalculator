@@ -1,16 +1,20 @@
-const tradePrices = {normal:{full:"1,380,000"},
+const tradePrices = {normal:{full:"800,000",
+                             last:"250,000"},
                      heroic:{full:"4,780,000", 
                              last:"2,780,000", 
                              aotc:"1,580,000"}};
-const discordPrices = {normal:{full:"1,223,000"},
+const discordPrices = {normal:{full:"730,000",
+                               last:"250,000"},
                        heroic:{full:"4,113,000", 
                                last:"2,413,000", 
                                aotc:"1,393,000"}};
-const tradeProfit = {normal:{full:"207,000"}, 
+const tradeProfit = {normal:{full:"120,000",
+                             last:"37,500"}, 
                      heroic:{full:"717,000", 
                              last:"417,000", 
                              aotc:"237,000"}};
-const minPrice = {normal:{full:"1,173,000"}, 
+const minPrice = {normal:{full:"1,173,000",
+                          last:"212,500"}, 
                   heroic:{full:"4,063,000", 
                           last:"2,363,000", 
                           aotc:"1,343,000"}};
@@ -22,12 +26,10 @@ function showRuns()
     switch(difficulty)
     {
         case "normal":
-            document.getElementById("r1").style.display = "none";
             document.getElementById("r2").style.display = "none";
             document.getElementById("RunType").options[0].selected = "selected";
             break;
         case "heroic":
-            document.getElementById("r1").style.display = "";
             document.getElementById("r2").style.display = "";
             break;
         default:
